@@ -38,30 +38,38 @@ def bubble_sort(arr):
 	return a
 
 
+def findSmallest(arr):
+	"""Return the index of the smallest value in arr."""
+	smallest = arr[0]
+	smallest_index = 0
+
+	for i in range(1, len(arr)):
+		if arr[i] < smallest:
+			smallest = arr[i]
+			smallest_index = i
+
+	return smallest_index
+
+
 def selection_sort(arr):
 	"""
 	Selection Sort:
-	- Find the smallest element in the unsorted part.
-	- Swap it with the first unsorted position.
-	- Repeat by moving the boundary of sorted part.
+	- Grokking Algorithms version.
+	- Repeatedly find the smallest element index.
+	- Remove that element from input copy and append to new sorted list.
 
 	Time Complexity:
 	- Worst/Average/Best: O(n^2)
-	Space Complexity: O(1)
+	Space Complexity: O(n)
 	"""
-	a = arr[:]
-	n = len(a)
+	a = arr[:]  # Keep original list unchanged
+	new_arr = []
 
-	for i in range(n):
-		min_index = i
+	for _ in range(len(a)):
+		smallest_index = findSmallest(a)
+		new_arr.append(a.pop(smallest_index))
 
-		for j in range(i + 1, n):
-			if a[j] < a[min_index]:
-				min_index = j
-
-		a[i], a[min_index] = a[min_index], a[i]
-
-	return a
+	return new_arr
 
 
 def quick_sort(arr):
