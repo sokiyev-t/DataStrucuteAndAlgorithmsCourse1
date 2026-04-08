@@ -8,16 +8,36 @@ Topics:
 This file is designed for classroom explanation and live demo.
 """
 
+# def print_greeting(name):
+#     result_name=f"Hello, {name}!"
+#     return result_name
+
+# name=input("Enter your name: ")
+
+# print_result = print_greeting(name)
+
+# print(print_result);
+
+
+
+
 
 def countdown(n):
 	"""Print numbers from n to 1 using recursion."""
-	if n <= 0:
+	print(n)
+	if n<=1:
 		print("Blast off!")
 		return
+	else:
+		countdown(n-1)
+	# if n <= 0:
+	# 	print("Blast off!")
+	# 	return
 
-	print(n)
-	countdown(n - 1)
+	# print(n)
+	# countdown(n - 1)
 
+countdown(3)
 
 def greet(name):
 	"""Small call-stack demo inspired by Grokking Algorithms."""
