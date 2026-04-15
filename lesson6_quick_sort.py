@@ -1,3 +1,31 @@
+# def sum(arr):
+#     """Helper function to sum a list, used in some examples."""
+#     total = 0
+#     for num in arr:
+#         total += num
+#     return total
+
+# s=sum([1, 2, 3, 4])
+# print(f'Sum: {s}')  # Should print 10
+
+
+# def recursive_sum(arr):
+#     """Recursive version of sum."""
+#     if not arr:
+#         return 0
+#     return arr[0] + recursive_sum(arr[1:])
+
+
+# ar=[1, 2, 3, 4]
+
+# rs=recursive_sum(ar)
+
+
+# print(ar[1:])  # Should print [2, 3, 4]
+
+# print(f'Recursive Sum: {rs}')  # Should print 10
+
+
 """
 Lesson 6: Quick Sort
 Topics:
@@ -35,6 +63,12 @@ def quick_sort(arr):
 	greater = [x for x in arr[1:] if x > pivot]
 
 	return quick_sort(less) + [pivot] + quick_sort(greater)
+
+
+arr=[7,10, 5, 2, 3]
+sorted_arr=quick_sort(arr)
+print(f'Input: {arr}')
+print(f'Sorted: {sorted_arr}')
 
 
 def quick_sort_trace(arr, depth=0):
